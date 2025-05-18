@@ -4,8 +4,9 @@ var x = 10;
 var y = 20;
  console.log(x + y);
 
- var age = 19;
- console.log(age);
+ // {var age = 19;
+ //console.log(age);}
+
 
 
 
@@ -114,3 +115,60 @@ console.log('11' * 1); // 11 number
 console.log(typeof (1+1)); // number
 console.log(typeof ('1' + 1)); // string
 console.log(typeof  num); // number
+
+//CONDITIONALS STATEMENTS
+// if else
+
+const age = 19;
+if (age >=18 ){
+    console.log("you can vote");
+}
+else{
+    console.log("you can not vote");
+}
+
+// Ternary operator
+
+let h=10;
+   // h >=15 ? console.log("yes") : console.log("no"); 
+   let result = h >= 15 ? "yes" : "no";
+     console.log(result);
+
+// switch case
+
+const day = 1;
+    switch(day){
+        case 1 : console.log("monday");
+         break;
+        case 2 : console.log("tuesday");
+         break;
+        case 3 : console.log("wednesday");
+         break;
+        case 4 : console.log("thursday");
+         break;
+        case 5 : console.log("friday");
+         break;
+        case 6 : console.log("saturday");
+         break;
+        case 7 : console.log("sunday");
+         break;
+        default : console.log("invalid day");
+
+        }
+
+let a = 10;
+let opt="(+";
+let b = 20;
+ switch(opt){
+    case "+" : console.log(a+b);
+    break;
+    case "=" : console.log(a-b);
+    break;
+    case "*" : console.log(a*b);
+    break;
+    case "/" : console.log(a/b);
+    break;
+    default : console.log("invalid option");
+ }
+
+ 
