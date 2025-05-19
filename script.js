@@ -171,4 +171,37 @@ let b = 20;
     default : console.log("invalid option");
  }
 
+ // Logical operators
+ // 1. AND (&&) = both conditions should be true
+ // 2. OR (||) = one condition should be true
+ // 3. NOT (!) = negates the condition
+
+ // AND &&
+ {
+    const age = 19;
+    const gender ='male';
+    if (age >=18 && gender =='male'){
+        console.log("you are adult");
+    }
+ }
+ 
+ 
+
+ // OR ||
+ {
+    const age = 19;
+    const gender ='female';
+    if (age >=18 || gender =='male'){
+        console.log("you are adult");
+    }
+ }
+
+ // NOt !
+
+ {
+    const num = 5;
+    if (!(num % 2 == 0)){
+        console.log("odd");
+    }
+ }
  
