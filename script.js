@@ -205,3 +205,54 @@ let b = 20;
     }
  }
  
+ // LOOPS 
+ // 1. for loop -> if you how many times you want to run the loop   
+ {
+    for (let a = 1; a <= 10; a = a + 1){
+        console.log('Harji');
+    }
+ }
+
+ {
+    for (let age =19; age <= 80; age = age * 2){
+        console.log('Harji' + age);
+    }
+ }
+  
+    // 2. while loop -> if you dont know how many times you want to run the loop
+{
+    let person = 0;
+    let house = 10;
+    while ( person != house) { 
+        person = person + 1;
+        console.log('person steps'+ person);
+    }
+
+} 
+
+// 3. do while loop -> it will run the loop at least once even if the condition is false 
+
+{
+    let p = 10;
+    let h = 10;
+    do {
+        p = p + 1;
+        console.log('person steps'+ p);
+    } while (p <= h);
+}
+
+{
+    let number = 1;
+    let guess = 0;
+    let Winner = false;
+  do {
+    guess = parseInt(prompt("guess a number if want to quit press 0"));
+    if (guess == number) {
+      Winner = true;
+      alert('Winner');
+      break;
+    }
+  } while (guess != 0);
+  if (!Winner)
+    alert('loser');
+}
