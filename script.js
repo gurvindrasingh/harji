@@ -95,13 +95,14 @@ console.log(d);
 // for example = ia using person as an object and giveing it properties in {} 
 // is want to get single property then you can use . like person.name or person.age in this case
 // in this we sepreate the properties with , it is necessary to use ,
-const person = {
+{const person = {
     name: "harji",
     age: 19,    
     islogedIn: true,
     city: "karnal"
     }
     console.log(person);
+}
 
 // string '1' = '1' -> string
 // string = number -> string
@@ -131,8 +132,8 @@ else{
 
 let h=10;
    // h >=15 ? console.log("yes") : console.log("no"); 
-   let result = h >= 15 ? "yes" : "no";
-     console.log(result);
+let ternaryResult = h >= 15 ? "yes" : "no";
+     console.log(ternaryResult);
 
 // switch case
 
@@ -241,18 +242,81 @@ let b = 20;
     } while (p <= h);
 }
 
-{
+{ 
     let number = 1;
     let guess = 0;
-    let Winner = false;
-  do {
-    guess = parseInt(prompt("guess a number if want to quit press 0"));
-    if (guess == number) {
-      Winner = true;
-      alert('Winner');
-      break;
+    let winner = false;
+    do {
+        guess = parseInt(prompt('guess a number, if can not then press 0'));
+        if (guess == number) {
+            alert('winner');
+            winner = true;
+            break;
+        }
+    } while (guess != 0);
+    if (!winner) {
+        alert('loser');
     }
-  } while (guess != 0);
-  if (!Winner)
-    alert('loser');
+} 
+
+
+
+// FUNCTIONS -> A block of code that perform a particular task(can many times)
+
+function sayHello() {
+    console.log("hello");
+}
+
+sayHello() // by writng sayHello() you can call the function sayhello can be anyhting you write above
+
+// function with parameters
+           // arguments                             
+{function add (num1 , num2) {
+    console.log(num1 + num2);
+}
+add(10, 20); // parameters  
+}
+
+{function multiply(num1, num2) {
+     return num1 * num2;
+}
+ let aa =multiply(10, 20); 
+    console.log('result', aa)
+}
+
+
+{function addnumbers (){
+    let ans = 0;
+    for (let i = 0; i < arguments.length; i = i + 1){
+        ans = ans + arguments[i];
+      }
+    return ans;
+}
+let result =addnumbers(10,23,45,100,)
+console.log(result); 
+}
+// Arrow functions
+{let addv1 = (num1, num2) => num1 + num2; // one line function dont need to use {} ad return only in this case
+console.log(addv1(11, 22))
+}
+
+{
+    let add = (...nums) => {
+       let ans = 0;
+       for (let i = 0; i < nums.length; i++) {
+           ans = ans + nums[i];
+       }
+       return ans;
+    }
+    console.log(add(10, 20, 30, 40, 50));
+}
+// this keyword
+{
+    let obt = {
+        value : 10,
+        myfunction: function () {
+            console.log ('this is value' + this.value)
+        }
+    }
+    obt.myfunction();
 }
