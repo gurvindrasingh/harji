@@ -130,4 +130,20 @@ let opt= "+";
          console.log("invalid option");
      }
 
-             
+
+     { 
+    let number = 1;
+    let guess = 0;
+    let winner = false;
+    do {
+        guess = parseInt(prompt('guess a number, if can not then press 0'));
+        if (guess == number) {
+            alert('winner');
+            winner = true;
+            break;
+        }
+    } while (guess != 0);
+    if (!winner) {
+        alert('loser');
+    }
+} 

@@ -242,22 +242,22 @@ let b = 20;
     } while (p <= h);
 }
 
-{ 
-    let number = 1;
-    let guess = 0;
-    let winner = false;
-    do {
-        guess = parseInt(prompt('guess a number, if can not then press 0'));
-        if (guess == number) {
-            alert('winner');
-            winner = true;
-            break;
-        }
-    } while (guess != 0);
-    if (!winner) {
-        alert('loser');
-    }
-} 
+// { 
+//     let number = 1;
+//     let guess = 0;
+//     let winner = false;
+//     do {
+//         guess = parseInt(prompt('guess a number, if can not then press 0'));
+//         if (guess == number) {
+//             alert('winner');
+//             winner = true;
+//             break;
+//         }
+//     } while (guess != 0);
+//     if (!winner) {
+//         alert('loser');
+//     }
+// } 
 
 
 
@@ -319,4 +319,89 @@ console.log(addv1(11, 22))
         }
     }
     obt.myfunction();
+}
+
+// high order functions, callback function
+{
+    function add(a, b, cb) {
+        let result = a + b;
+        cb (result);
+    } 
+    add (10 ,20, (val) => console.log(val));
+
+}
+
+{
+    function add(a, b, cb) {
+        let result = a + b;
+        cb(result);
+        return () => console.log(result);
+    } 
+    let resultFunction = add(10, 20, () => {} );
+    resultFunction();
+
+}
+
+// Array methods
+{
+    const students = ['harji', 'harpreet', 'akash'];
+    students [0] = 'harji mallhi';
+    students.push('simranjeet') //.push command add new elements at the end of the array
+    students.push('one plus')
+    students.pop(); //.pop command removes the last element of the array
+    students.reverse(); //.reverse command reverses the array
+    console.log(students); 
+}
+
+// Array high order functions
+
+// .ForEach = loop function works as callback function in array
+{
+    const students = ['Harji', 'Akash', 'Harpreet'];
+    
+        // function print(n){
+        //     console.log(n);
+        // }
+     students.forEach((val) => console.log(val + ' Mallhi')); 
+}
+
+// .Map = returns the new array while forEach does not
+{
+     const numbers = [1, 2, 3, 4, 5, 6, 7];
+      double = (n) => {
+        return n * 2;
+     }
+     let NewArray = numbers.map(double); 
+     console.log(numbers); // original array remains same
+     console.log(NewArray); // [2, 4, 6, 8, 10, 12, 14] 
+
+}  
+
+// .Find = returns the first element that matches the condition
+{
+    const numberas = [1, 2, 3, 4, 5];
+    let ans = numberas.find((num) => num === 4);
+    console.log(ans);
+}
+
+//.Filter = filter the result you want
+{
+    const numbers = [1, 2, 3, 4, 5];
+    const NewArray= numbers.filter((num) => num % 2 ==0)
+    console.log(NewArray)
+}
+
+// .slice = can chosse specific portion
+{
+    const numbers = [1, 2, 3, 4, 5];
+    let NewArray = numbers.slice(1,4)// in this when slice pecking value its ignore the last value of i have choosen extra 
+    console.log(NewArray)
+}
+
+//.splice = deleat the elements from original array and pass the new one
+{
+    const numbers = [1, 2, 3, 4, 5, 6, 7];
+    let NewArray = numbers.splice(1,4)
+    console.log(NewArray)
+    console.log(numbers)
 }
