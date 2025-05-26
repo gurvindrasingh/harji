@@ -4,14 +4,34 @@
     <title>JavaScript</title>
 </head>
 <body>
-    
-<h1>learning java script</h1>
-    
-<script>
-// it is use for comment,it is not executed by the browser
-console.log("hello world");
-console.log("using console first time");
-</script>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+
+    <nav class="block">
+        <p class ="paragraph">welcome to my website</p>
+    </nav>
+    <div class="block">
+        <h4>Hello, My Name is <span id ='username'>Mallhi</span></h4>    
+        <P class="paragraph">Here is a code for you</P>
+        <pre><code>console.log(Hey There)</code></pre>
+        </div>
+
+     <script>
+    // queary Selector
+        let div = document.querySelector('div');
+        console.log(div.innerHTML);
+        const username = document.querySelector('#username');
+        username.innerText = 'Harji Mallhi';
+
+       { let ele = document.querySelector("div");
+        console.log(ele.parentElement);
+       } 
+        let ele = document.querySelectorAll(".block");
+        ele.forEach(element => {
+            console.log(element.innerHTML);
+        });
+
+       
+
+    </script>
+  </body>
 </html>
