@@ -2,6 +2,14 @@
 <html>
 <head>
     <title>JavaScript</title>
+    <style>
+     .red-color{
+        color: red;
+     }
+     .underline {
+        text-decoration: underline;
+     }
+    </style>
 </head>
 <body>
     <script src="script.js"></script>
@@ -10,7 +18,7 @@
         <p class ="paragraph">welcome to my website</p>
     </nav>
     <div class="block">
-        <h4>Hello, My Name is <span id ='username'>Mallhi</span></h4>    
+        <h4 id="name-block">Hello, My Name is <span id ='username'>Mallhi</span></h4>    
         <P class="paragraph">Here is a code for you</P>
         <pre><code>console.log(Hey There)</code></pre>
         </div>
@@ -30,8 +38,61 @@
             console.log(element.innerHTML);
         });
 
-       
+       {
+        const el = document.getElementById('username')
+        el.innerText = "Harji"
+        el.classList.add("red-color", "underline")
+        el.classList.remove("underline")
+        el.style.color = ("gold")
+        el.parentElement.style.background = ("grey")
+       }
 
+       {
+        const els = document.getElementsByClassName ("block")
+        for (let i = 0; i <els.length; i++)
+        els.item(i).style.background ="cyan";
+       }
+
+    //     function handelbutton() {
+    //         alert('i am clicked');
+    //    }
+    //  <button onclick="handelbutton()">click it</button>
+    </script>   
+
+    <button id="clickbutton">click it</button>
+
+    <script>
+         let el = document.getElementById("clickbutton")
+         const nameblock = document.getElementById("name-block") 
+
+        //   el.onclick= () => {
+        //     console.log ("hey i am clicked")
+        //   } [ this is the one way to assign event on button
+
+        /* fuction button() {
+           console.log(" I am clicked")        
+        }
+           el.addEventListener('click' button)
+           by callback 
+        */
+
+       el.addEventListener('click', () => {
+        if (nameblock.style.color ==="red"){
+                nameblock.style.color ='blue'
+            }
+         else (nameblock.style.color ="red")
+       }) 
+        
+    </script>
+
+    <script>
+       const allchildren = document.querySelector("body").children;
+      
+       for (let i = 0; i < allchildren.length; i++){
+        allchildren.item(i).addEventListener("click", () => {
+            allchildren.item(i).remove;
+        });
+       }
     </script>
   </body>
 </html>
