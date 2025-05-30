@@ -405,3 +405,18 @@ console.log(addv1(11, 22))
     console.log(NewArray)
     console.log(numbers)
 }
+
+const ibutton = document.getElementById("button4")
+const uname = document.getElementById('input-username')
+const usern = document.getElementById("username")
+
+ibutton.addEventListener('click', () => {
+    const value = uname.value;
+    localStorage.setItem("name", value)
+    location.reload();
+});
+
+window.addEventListener("load", () => {
+    let value = localStorage.getItem('name')
+    usern.innerText = value
+})
