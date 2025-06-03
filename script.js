@@ -421,3 +421,88 @@ window.addEventListener("load", () => {
     usern.innerText = value
 })
 
+// Clouser
+
+function main () {
+    const name = 'Harji Mallhi'
+
+    function sayname () {{
+        console.log(name)
+    }}
+     return sayname
+}
+
+  let fn =  main()
+
+  fn()
+
+
+  function adder(num) {
+
+    function add(a){
+        console.log(num + a)
+    }
+
+    return add;
+  }
+
+  let addto5 = adder(5)
+  let addto10 = adder(10)
+
+  addto5(5)
+  addto10(5)
+  
+  const myname = document.getElementById("my-name")
+  const sbtn = document.getElementById("nsizechange")
+
+  function textsizer (size) {
+
+    function changesize () {
+        myname.style.fontSize = `${size}px`
+    }
+        return changesize;
+  }
+  
+  const s10 = textsizer(10)
+  const s30 = textsizer(30)
+  const s55 = textsizer(55)
+  const s70 = textsizer(70)
+
+  sbtn.addEventListener('click', s30 )
+
+  // currying
+
+//   function CAdd(a) {
+//     return function(b) {
+//         return function(c) {
+//             return a + b + c;
+//         }
+//     }
+//   }
+
+const CAdd = a => b => c => a + b + c // new version or improve ver
+
+  console.log(CAdd(20)(30)(50));
+
+
+// function AutoEmail (to) {
+//     return function (subject) {
+//         return function (body) {
+//             console.log(` Sending Email to ${to} with subject ${subject} ${body}`)
+//         }
+//     }
+// }
+
+
+// let step1 = AutoEmail('harjimallhi@gmail.com')
+// let step2 = step1('confirmation:')
+
+// in bellow (↓) ther is a upgraded version of what i write above
+
+const AutoEmail = (to) => (subject) => (body) =>
+` Sending Email to ${to} with subject ${subject} ${body}`
+
+let step1 = AutoEmail('harjimallhi@gmail.com')
+let step2 = step1('confirmation:')
+
+ console.log(step2('hey harji, here its your new data'));
