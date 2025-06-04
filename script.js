@@ -158,12 +158,12 @@ const day = 1;
         }
 
 let a = 10;
-let opt="(+";
+let opt = "+";
 let b = 20;
  switch(opt){
     case "+" : console.log(a+b);
     break;
-    case "=" : console.log(a-b);
+    case "-" : console.log(a-b);
     break;
     case "*" : console.log(a*b);
     break;
@@ -426,9 +426,9 @@ window.addEventListener("load", () => {
 function main () {
     const name = 'Harji Mallhi'
 
-    function sayname () {{
+    function sayname () {
         console.log(name)
-    }}
+    }
      return sayname
 }
 
@@ -506,3 +506,77 @@ let step1 = AutoEmail('harjimallhi@gmail.com')
 let step2 = step1('confirmation:')
 
  console.log(step2('hey harji, here its your new data'));
+
+ // Compositon
+
+ {
+
+    function multiply(arg) {
+        return arg[0] * arg[1];
+    }
+
+     function square (arg) {
+         return arg * arg;
+     }
+     
+    // function cf1(fn1, fn2) {
+
+    //     return function(a, b) {
+
+    //         return fn2(fn1(a,b));
+            
+    //     }
+    // }
+    // same code below in modern java code or Es6
+
+    //  const cf2 = (fn1 ,fn2) => (a ,b) => fn2(fn1(a, b));
+    
+    //  const task = cf2(multiply, square)
+    //      console.log(task(2,3))
+
+    // for unlimited arg
+
+    
+     function cf3(...fns) {
+        return function(...value) {
+            return fns.reduce((a, b) => b(a), value)
+        }
+     }
+           
+
+        const t2 = cf3(multiply, square, (value) => value + 1, (value) => value / 2)
+        console.log(t2(1, 3))
+    
+ }
+
+ // IIFE => immediately invoked Function Expression
+
+ {
+    (function add(a ,b) {
+            console.log(a + b);
+        }
+    )(1,2)
+
+}
+
+{ const data = (async () => await fetch)(); }
+
+    const AtM = (
+        function (currentBalance) {
+            let Balance = currentBalance;
+            function withdrawl (amount) {
+                if (amount > Balance ) {
+                    return 'do you even have this much????'
+                } else {
+                    Balance -= amount;
+                    return Balance;
+                }
+            }
+            return withdrawl;
+        }
+    )
+
+    const Harji = AtM(1000)
+    console.log(Harji(100));
+    console.log(Harji(1000));
+    
