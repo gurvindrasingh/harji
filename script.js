@@ -580,3 +580,47 @@ let step2 = step1('confirmation:')
     console.log(Harji(100));
     console.log(Harji(1000));
     
+// Iterators and Genrators
+
+{
+function makeIterator(start = 0, end = Infinity, step = 1 ) {
+    let nextstart = start;
+    let Iteratorcount = 0;
+
+    return {
+        next () {
+            if (Iteratorcount < end) {
+                let result = { value: nextstart, done: false };
+                nextstart = nextstart + step;
+                Iteratorcount++;
+                return result;
+            }
+            return { value: Iteratorcount, done: true };
+        }
+        
+    }
+}
+
+const myInterator = makeIterator(1, 5,);
+let result = myInterator.next();
+
+while (!result.done) {
+    console.log(result.value);
+    result = myInterator.next();
+}
+
+}
+
+function* myInteratornew(start = 0, end = Infinity, step = 1) {
+    for (let i = start; i < end; i += step) {
+        yield i;
+    }
+}
+
+const itbut = document.getElementById("next-cnt-iterator");
+let cnt = myInteratornew(1, 20, 2)
+
+itbut.addEventListener('click', () => {
+    itbut.innerText = cnt.next().value;
+})
+
