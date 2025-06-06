@@ -5,12 +5,7 @@ var y = 20;
  console.log(x + y);
 
  // {var age = 19;
- //console.log(age);}
-
-
-
-
-
+ //console.log(age);
 //use of var is global no matter where you declare it
 // it even can use in browser console after the declaration 
 
@@ -618,9 +613,62 @@ function* myInteratornew(start = 0, end = Infinity, step = 1) {
 }
 
 const itbut = document.getElementById("next-cnt-iterator");
-let cnt = myInteratornew(1, 20, 2)
+let cnt = myInteratornew(1, 20, 2);
 
-itbut.addEventListener('click', () => {
-    itbut.innerText = cnt.next().value;
-})
+if (itbut) {
+    itbut.addEventListener('click', () => {
+        itbut.innerText = cnt.next().value;
+    });
+}
+
+// Promisification
+
+function promisify(fn) {
+    return function(...args) {
+        return new Promise((resolve, reject) => {
+            fn(...args, (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            });
+        });
+    };
+}
+
+// Without promise
+
+function loadscript( src, callback) {
+    const script = document.createElement("script");
+
+    script.src =src;
+
+    script.onload = () => callback(null, script);
+    script.onerror = (error) => callback(error);
+
+    document.head.appendChild(script);
+    
+}
+
+// loadscript('test.js', (error, script) => {
+//     if(error){
+//         console.log(error);
+//     }else{
+//         console.log('script loaded');
+//     }
+// })
+
+const loadscriptnew = promisify(loadscript);
+
+// loadscriptnew('test.js')
+// .then(() => console.log('done:'))
+// .catch(() => console.log('ERROR'));
+// same this function in async await below
+
+(async() => {
+  try {
+      const result = await loadscriptnew('test.js')
+    console.log('done')
+  } catch (error) {
+    console.log(error)
+  }
+})();
 
