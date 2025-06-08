@@ -31,4 +31,4 @@ function handleclick(el) {
     checkWinner();
     CurrentPlayer = CurrentPlayer === "X" ? "O" : "X";
     
-}
+};

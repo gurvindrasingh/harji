@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Guessing-game</title>
+
+    <style>
+         body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+
+         #option-contanier {
+             display: grid;
+            grid-template-columns: repeat(3, 0fr);
+         }
+
+         #option-contanier > div {
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+         }
+         #option-contanier > div:hover {
+            scale: 1.1;
+            transition: 0.4ms all;
+         }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1> COLOR CODE GIVEN BELOW GUESS IT !!!!!</h1>
+        <h2 id="COLOR-CODE"></h2>
+    </div>
+    <div>
+        <h3>Score: <span id="Score"></span></h3>
+    </div>
+    <div id="option-contanier">
+        
+    </div>
+    <script src="c.js"></script>
+</body>
+</html>
