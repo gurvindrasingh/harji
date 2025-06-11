@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    text-decoration: red underline;
+    font-weight: lighter;
+  
+}
+
+p{
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#b1 {
+    align-items: center;
+}
