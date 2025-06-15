@@ -1,0 +1,29 @@
+.Calculator-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+.Calculator {
+    height: 500px; 
+    width: 300px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    border-radius: 18px;
+    background: #fff;
+}
+
+.cal-buttons {
+   text-align: center;
+   cursor: pointer;
+   border-radius: 22px;
+   transition: background 0.2s, color 0.2s;
+   font-weight: 500;
+}
+
+.cal-buttons:hover {
+   background-color: #15b0d6;
+   color: #fff;
+   box-shadow: 0 2px 8px rgba(21,176,214,0.15);
+}

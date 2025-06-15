@@ -9,10 +9,47 @@ p{
     text-align: center;
 }
 
-a {
-    text-decoration: none;
+#one {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: blue;
+    background-color: lightgray;
 }
 
-#b1 {
-    align-items: center;
+#two {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: green;   
+    background-color: lightyellow;
+    text-transform: capitalize;
+}
+div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#div2 {
+    background-color: lightblue;
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(136, 14, 164);
+    padding: 10px;
+}
+#div3 {
+    background-color: lightgreen;
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(136, 14, 164);
+    padding: 10px;
+}
+
+button {
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+   
 }
