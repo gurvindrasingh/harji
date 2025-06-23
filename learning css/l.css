@@ -29,27 +29,42 @@ div {
     
 }
 
+
 #div2 {
-    background-color: lightblue;
+    background-color:white;
+    display: flex;
     height: 100px;
-    width: 100px;
-    border: 2px solid rgb(136, 14, 164);
-    padding: 10px;
-}
-#div3 {
-    background-color: lightgreen;
-    height: 100px;
-    width: 100px;
-    border: 2px solid rgb(136, 14, 164);
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
 }
 
-button {
-    background-color: lightcoral;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+#btn1 {
+    padding: 14px 32px;
+    background: rgb(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    color: #fff;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-   
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#btn1:hover {
+    border-color: #00f0ff;
+    color: #00f0ff;
+    box-shadow: 0 0 12px #00f0ff, 0 0 24px #00f0ff inset;
+    transform: scale(1.05);
+}
+
+#btn1:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 6px #00f0ff, 0 0 12px #00f0ff inset;
+}
+
+#div3 {
+    background-color:rgba(216, 0, 0, 0.3);
 }

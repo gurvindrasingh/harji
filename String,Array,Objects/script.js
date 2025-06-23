@@ -60,3 +60,7 @@ console.log(str9);// str9 can not change original string str8 it will create a n
 properties will give info about string
 methods/function will perform some action on string by using ()
 */
+
+let str10 = "hello";
+let str10copy = str10.toUpperCase(); // this will not change the original string
+console.log(str10, str10copy);

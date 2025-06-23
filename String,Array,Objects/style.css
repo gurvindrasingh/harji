@@ -1,5 +1,5 @@
 #btn1{
-    background: linear-gradient(135deg, #1a73e8, #34a853);
+    background: linear-gradient(135deg, #07e2ff, #0a06d3);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -13,7 +13,7 @@
 
 #btn1:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #34a853, #1a73e8);
+    background: linear-gradient(135deg, #8c05d4, #f20736);
 }
 
 #btn1:active {
