@@ -13,7 +13,7 @@ console.log(str3, typeof str3);
 let firstName = 'Harji';
 let MiddleName = 'Singh';
 let lastName = 'Mallhi';
-let fullName = firstName + " " + MiddleName + " " + lastName;
+let fullName = firstName + " " + MiddleName + " " + lastName;// also can use concatenation .concat() method
 console.log(fullName);
 
 let fullname2 = `${firstName} ${MiddleName} ${lastName}`;
@@ -64,3 +64,16 @@ methods/function will perform some action on string by using ()
 let str10 = "hello";
 let str10copy = str10.toUpperCase(); // this will not change the original string
 console.log(str10, str10copy);
+
+// .includes() method checks if a string contains a substring
+
+let str11 = " i am boy";
+let check = str11.includes("am"); // checks if the string contains "am"
+console.log(check);// give value true or false its true in this case
+console.log(str11.indexOf("a")); // gives index of first occurrence of "a" in the string
+console.log(str11.charAt(3)); // gives character at index 2
+console.log(str11.replace("boy", "girl"));
+
+let username = "@harjimallhi";
+
+console.log(username.slice(1));// removes first character from the string
